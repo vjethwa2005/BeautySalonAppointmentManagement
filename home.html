@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lotus Beauty Salon Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  
+</head>
+<body bgcolor="#57160s">
+  <style>
+    html{
+      scroll-behavior: smooth;
+    }
+    /* body{
+      overflow-x: hidden;
+    } */
+    
+    ::-webkit-scrollbar-track{
+      background: #944440;
+    }
+
+    ::-webkit-scrollbar-thumb{
+      border-radius: 5px;
+      background: #f4cbcb;
+    }
+    nav{
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Vertically centers items */
+      align-items: center;     /* Horizontally centers items */
+      margin: 0 auto;
+      top:0px;
+      right:0px;
+      float:right;
+      width: 200px;
+      height: 750px;
+      background-color:#f4cbcb;
+      margin:0px;
+      padding:0px;
+      position: fixed;
+      z-index: 1000;
+    }
+    ul{
+      list-style:none;
+      margin:0px;
+      padding:0;
+      float: center;
+    }
+            
+    li{
+      color: white;
+    }
+
+    li a{
+        
+      display:block;
+      color:#57150d;
+      text-align:center;
+      padding:14px 16px;
+      text-decoration: none;
+      font-family: playfair display;
+      font-weight: bold;
+      font-size: larger;
+      transition: 5ms;
+    }
+
+    li a:hover{
+
+      background-color: #944440;
+      color: #f4cbcb;
+      border-radius: 25px;
+    }
+
+    .home{
+      position: absolute;
+      height: 700px;
+      width: 1300px;
+      /* background-color: black; */
+    }
+    .acc_button{
+      margin:0;
+      font-size: xx-large;
+      font-family: playfair display;
+      font-weight: bold;
+      position: absolute;
+      top: 440px;
+      left: 780px;
+      z-index: 1;
+      transition: 0.5s;
+    }
+
+    .acc_button:hover{
+      text-shadow:0 0 10px #e3dcdc,
+                  0 0 20px #e3dcdc,
+                  0 0 40px #e3dcdc,
+                  0 0 80px #e3dcdc,
+                  0 0 120px #e3dcdc,
+                  0 0 160px #e3dcdc;
+    }
+
+    .lotus_model{
+      position: absolute;
+      top: -30px;
+    }
+    .img_bg img{
+      position: relative;
+      top:7px;
+      left: 10px;
+      border-radius: 0px 0px 180px 180px;
+      transition: 0.5s;
+      box-shadow: 0px 25px 25px 5px #57150d;
+    }
+
+    .img_bg{
+      position: absolute;
+      background-color: #e3dcdc;
+      backdrop-filter: blur(100px);
+      height: 450px;
+      width: 360px;
+      border-radius: 0px 0px 0px 180px;
+      top:150px;
+      left:150px;
+      transition: 0.5s;
+    }
+
+    .image img:hover,.img_bg:hover{
+      border-radius: 180px 0px 180px 0px;
+      box-shadow: 0px 25px 30px 15px #57150d;
+    }
+
+    .lotus_text{
+      margin:0;
+      position: absolute;
+      font-size: 100px;
+      font-family: abril fatface;
+      color:#f4cbcb;
+      top:65px;
+      left:-100px;
+      text-shadow: 0px 10px 15px#310a08;
+      animation: slide linear forwards;
+      animation-timeline: view();
+      animation-range: entry 0;
+    }
+
+    @keyframes slide {
+      to{
+        left:160px;
+      }
+    }
+  
+    .lotus_repeat{
+      position: absolute;
+      z-index: -1;
+      border-radius: 0 0 0 0;
+      top:300px;
+      left: -100px;
+      filter: opacity(0.6);
+    }
+
+    .text_decor{
+      height: 75px;
+      width: 350px;
+      background-color: transparent;
+      border: 2px solid #f4cbcb;
+      position: absolute;
+      top:425px;
+      left:730px;
+      border-radius: 50%;
+    }
+
+    .text{
+      font-family: playfair display ;
+      font-size: 25px;
+      color: #f4cbcb;
+      text-align: center;
+      height: 50px;
+      width: 35%;
+      top:250px;
+      left:680px;
+      position: absolute;
+      
+    }
+
+    .star{
+      position: absolute;
+      top:450px;
+      left: 150px;
+      z-index: 1;
+      animation: rotate 5s ease-in-out 5ms infinite;
+    }
+
+    @keyframes rotate {
+      0%{
+        transform: rotate(0deg);
+      }
+
+
+      50%{
+        transform: rotate(180deg);
+      }
+    }
+
+    .star2{
+      position: absolute;
+      top:425px;
+      left: 750px;
+      z-index: 1;
+      animation: revolve2 5s ease-in-out 5ms infinite alternate;
+    }
+
+    @keyframes revolve2 {
+      0%{top:425px;left:750px;}
+      50%{top:450px;left:715px;}
+      100%{top:460px;left:730px;}
+    }
+
+    .star3{
+      position: absolute;
+      top:475px;
+      left: 1025px;
+      z-index: 1;
+      animation: revolve3 5s linear 5ms infinite alternate;
+    }
+
+    @keyframes revolve3 {
+      0%{top:475px;left:1025px}
+      50%{top:455px;left:1065px}
+      70%{top:440px;left:1070px;}
+      100%{top:430px;left:1055px;}
+    }
+
+    
+
+    .services{
+      position: absolute;
+      top:700px;
+      height: 700px;
+      width: 1300px;
+      /* background-color: white; */
+      margin-top: 50px;
+      transform-style: preserve-3d;
+      perspective: 1000px;
+    }
+
+    .services_text{
+      position: relative;
+      font-family: abril fatface;
+      font-size: 75px;
+      color: #f4cbcb;
+      top:50px;
+      left:0px;
+      text-shadow: 0px 10px 15px#310a08;
+      animation: slide2 linear forwards;
+      animation-timeline: view();
+      animation-range: entry 0;
+    }
+
+    @keyframes slide2 {
+      to{
+        left:100px;
+      }
+    }
+
+    .outercircle1{
+      position: relative;
+      border-radius: 50%;
+      height: 255px;
+      width: 250px;
+      background-color: #944440;
+      top:250px;
+      left:80px;
+      transition: 0.5s;
+    }
+
+    .circle1 img{
+      position: relative;
+      border-radius: 50%;
+      height: 250px;
+      width: 240px;
+      top:0px;
+      left:0px;
+      opacity: 0.5;
+      transition: 0.5s;
+    }
+
+    .outercircle2{
+      position: relative;
+      border-radius: 50%;
+      height: 255px;
+      width: 250px;
+      background-color: #944440;
+      top:-150px;
+      left:380px;
+      transition: 0.5s;
+    }
+
+
+    .circle2 img{
+      position: relative;
+      border-radius: 50%;
+      height: 250px;
+      width: 240px;
+      top:0px;
+      left:0px;
+      opacity: 0.5;
+      transition: 0.5s;
+    }
+
+    .outercircle3{
+      position: relative;
+      border-radius: 50%;
+      height: 255px;
+      width: 250px;
+      background-color: #944440;
+      top:-250px;
+      left:680px;
+      transition: 0.5s;
+    }
+
+    .circle3 img{
+      position: relative;
+      border-radius: 50%;
+      height: 250px;
+      width: 240px;
+      top:0px;
+      left:0px;
+      opacity: 0.5;
+      transition: 0.5s;
+    }
+
+    .outercircle4{
+      position: relative;
+      border-radius: 50%;
+      height: 255px;
+      width: 250px;
+      background-color: #944440;
+      top:-650px;
+      left:980px;
+      transition: 0.5s;
+    }
+
+    .circle4 img{
+      position: relative;
+      border-radius: 50%;
+      height: 250px;
+      width: 240px;
+      top:0px;
+      left:0px;
+      opacity: 0.5;
+      transition: 0.5s;
+    }
+    
+    .circle1 img:hover, .circle2 img:hover, .circle3 img:hover, .circle4 img:hover{
+      opacity: 1;
+    }
+    .outercircle1 .text, .outercircle2 .text, .outercircle3 .text, .outercircle4 .text{
+      position: absolute;
+      top:270px;
+      left:70px;
+      z-index: 1;
+      font-family:playfair display;
+      font-weight: bold;
+      }
+    
+    .outercircle1:hover, .outercircle2:hover, .outercircle3:hover, .outercircle4:hover {
+      box-shadow:0 30px 30px 10px black;
+      opacity: 1;
+      transform: translateZ(50px);
+    }  
+
+    .services .ser_lotus_repeat{
+      position: absolute;
+      z-index: -1;
+      border-radius: 0 0 0 0;
+      top:600px;
+      left:1000px;
+      filter: opacity(0.6);
+    }
+
+    .booknow{
+      position: absolute;
+      top:1600px;
+      height: 800px;
+      width: 1300px;
+      /* background-color: black; */
+    }
+    .booknow_text{
+      position: relative;
+      font-family: abril fatface;
+      font-size: 75px;
+      color: #f4cbcb;
+      top:30px;
+      left:0px;
+      text-shadow: 0px 10px 15px#310a08;
+      animation: slide2 linear forwards;
+      animation-timeline: view();
+      animation-range: entry 0;
+    }
+
+    .container{
+      position: relative;
+      top:50px;
+      width: 400px;
+      height: 500px;
+      background-color: #f4cbcb;
+      backdrop-filter: blur(100px);
+      display: flex;
+      /* justify-content: space-around; */
+    }
+
+    form{
+      position: relative;
+      width: 35%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      left:450px;
+      border-radius: 25px;
+      text-align: center;
+    }
+
+    form:hover{
+      box-shadow:0 30px 30px 15px #310a08;
+    }
+
+    input[type="date"]::-webkit-inner-spin-button,
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      display: none;
+      -webkit-appearance: none;
+    }
+
+    input[type="time"] {
+            display: none;
+        }
+
+    i{
+      position: relative;
+      /* background-color: #310a08; */
+      left:50px;
+      z-index: 1;
+    }
+
+
+    .inputs .field{
+      position: relative;
+      left:0px;
+      width:300px;
+      height: 50px;
+      border: none;
+      outline:none;
+      border-radius: 25px;
+      margin: 5px;
+      color:#310a08;
+      font-size: 15px;
+      text-align: center;
+      font-family: playfair display;
+      font-weight: bold;
+      /* box-shadow: 0 30px 30px 10px #310a08; */
+    }
+
+    .inputs .field::placeholder{
+      text-align: center;
+      padding:10px;
+      font-family: playfair display;
+      color:#944440;
+    }
+
+    .container h1{
+      position: relative;
+      text-align: center;
+      font-family: playfair display;
+      font-size: 25px;
+      top:0px;
+      
+    }
+    .contactus{
+      position: absolute;
+      top:2400px;
+      height: 800px;
+      width: 1300px;
+      /* background-color: black;  */
+    }
+
+    .contactus_text{
+      position: relative;
+      font-family: abril fatface;
+      font-size: 75px;
+      color: #f4cbcb;
+      top:30px;
+      left:0px;
+      text-shadow: 0px 10px 15px#310a08;
+      animation: slide2 linear forwards;
+      animation-timeline: view();
+      animation-range: entry 0;
+    }
+
+    .about{
+      position: absolute;
+      top:3200px;
+      height: 800px;
+      width: 1300px;
+      /* background-color: white; */
+    }
+
+    .about_text{
+      position: relative;
+      font-family: abril fatface;
+      font-size: 75px;
+      color: #f4cbcb;
+      top:30px;
+      left:0px;
+      text-shadow: 0px 10px 15px#310a08;
+      animation: slide2 linear forwards;
+      animation-timeline: view();
+      animation-range: entry 0;
+    }
+
+    .abt_circle{
+      position: relative;
+      height: 300px;
+      width:300px;
+      /* background-color:#944440; */
+      border-radius: 50%;
+      top:100px;
+      left:100px;
+      border: 5px dotted #e3dcdc;
+      transition: 0.5s;
+    }
+
+    .abt_circle:hover{
+      box-shadow:0 30px 30px 10px black;
+      /* opacity: 0.5; */
+    }
+
+    .actual_circle{
+      position: relative;
+      height: 280px;
+      width:280px;
+      background-color:#944440;
+      border-radius: 50%;
+      top:10px;
+      left:10px;
+    }
+
+    .actual_circle img{
+      position: relative;
+      height: 280px;
+      width:280px;
+      border-radius: 50%;
+      top:0px;
+      left:0px;
+    }
+
+    .about_star img{
+      position: absolute;
+      top:0px;
+      left: 25px;
+      z-index: 1;
+      height: 50px;
+      width: 50px;
+      animation: rotate_star 5s ease-in-out 3ms infinite forwards;
+    }
+
+    @keyframes rotate_star {
+      0%{
+        transform: rotate(0deg);
+      }
+
+
+      50%{
+        transform: rotate(360deg);
+      }
+    }
+
+    .about p{
+      position: relative;
+      font-family: playfair display;
+      color: #f4cbcb;
+      font-size: 25px;
+      text-align:center;
+      height: auto;
+      width: 50%;
+      left:800px;
+      top:-200px;
+      animation: appear linear forwards;
+      animation-timeline: view();
+      animation-range: entry 0;
+      z-index: -1;
+      animation-duration: 5s;
+    }
+
+    @keyframes appear {
+      to{
+        left:500px;
+      }
+    }
+    .name{
+      position: relative;
+      font-family: abril fatface;
+      color: #f4cbcb;
+      font-size: 25px;
+      text-align:left;
+      height: auto;
+      left:140px;
+      top:-170px;
+      font-weight:normal;
+    }
+
+  </style>
+  <nav>
+    <ul>
+      <li><a href="#HOME">HOME</a></li>
+      <li><a href="#SERVICES">SERVICES</a></li>
+      <li><a href="#BOOKNOW">BOOK NOW</a></li>
+      <li><a href="#CONTACT US">CONTACT US</a></li>
+      <li><a href="#ABOUT US">ABOUT US</a></li>
+      <li><a href="#RESCHEDULE">RESCHEDULE</a></li>
+      <li><a href="#ACC">MY ACCOUNT</a></li>
+    </ul>
+  </nav>
+
+  <div class="home" id="HOME">
+      <div class="acc_button">
+        <a href="#BOOKNOW" style="text-decoration: none; color:#f4cbcb">MAKE ME GLOW</a>
+      </div>
+
+      <div class="text_decor"></div>
+      <div class="star">
+        <img src="./LOTUS_dark_mode__6_-removebg-preview.png" height="80px" width="80px">
+      </div>
+
+      <div class="star2">
+        <img src="./LOTUS_dark_mode__6_-removebg-preview.png" height="30px" width="30px">
+      </div>
+
+      <div class="star3">
+        <img src="./LOTUS_dark_mode__6_-removebg-preview.png" height="30px" width="30px">
+      </div>
+
+
+    <div class="lotus_model">
+      <div class="img_bg">
+        <div class="image">
+          <img src="./Beauty Photography - Lucy Alcorn _ Beauty Photographer _ Sydney.jpeg" height="430px" width="340px">
+        </div>
+      </div>
+      <div class="lotus_text">
+        LOTUS
+      </div>
+    </div>
+
+    <div class="lotus_repeat">
+      <img src="./LOTUS_dark_mode__3_-removebg-preview.png">
+    </div>
+
+    <div class="text">
+      Step into a world of pampering and relaxation with LOTUS Beauty salon, where our stylist is committed to make you look and feel your absolute best.
+    </div>
+  </div>
+
+  <div class="services" id="SERVICES">
+    <div class="services_text">
+      OUR SERVICES
+    </div>
+    <div class="outercircle1">
+      <div class="circle1">
+        <a href="#HAIR">
+            <img src="./hair.jpeg">
+        </a>
+      </div>
+      <div class="text">HAIR</div>
+    </div>
+    
+    <div class="outercircle2">
+      <div class="circle2">
+        <img src="./nails.png">
+      </div>
+
+      <div class="text">MANICURE</div>
+    </div>
+
+    <div class="outercircle3">
+      <div class="circle3">
+        <img src="./pedicure.png">
+      </div>
+      <div class="text">PEDICURE</div>
+    </div>
+
+    <div class="outercircle4">
+      <div class="circle4">
+        <img src="./makeup.jpeg">
+      </div>
+
+      <div class="text">MAKEUP</div>
+    </div>
+
+    <div class="ser_lotus_repeat">
+      <img src="./LOTUS_dark_mode__3_-removebg-preview.png">
+    </div>
+  </div>
+
+  <div class="about" id="ABOUT US">
+    <div class="about_text">
+      ABOUT US
+    </div>
+
+    <div class="abt_circle">
+      <div class="actual_circle">
+        <img src="./about.jpeg">
+      </div>
+
+      <div class="about_star">
+        <img src="./LOTUS_dark_mode__6_-removebg-preview.png">
+      </div>
+    </div>
+
+    <p>At Lotus beauty salon, we specialize
+      in bringing out your natural beauty.
+      With over 8 years of experience, our expert provides personalized services,
+      from stylish haircuts and vibrant colors to rejuvenating facials and flawless makeup.
+      We stay ahead of trends to ensure you leave feeling confident and radiant. Visit us for a tailored,
+      luxurious experience every time.</p>
+
+    <div class="name">VAISHALI R. SHIMPI</div>
+  </div>
+
+  <div class="contactus" id="CONTACT US">
+    <div class="contactus_text">
+      CONTACT US
+    </div>
+  </div>
+
+
+  <div class="booknow" id="BOOKNOW">
+    <div class="booknow_text">BOOK US NOW</div>
+    <form action="" method="post" class="container">
+      <h1>Ready to Pamper yourself?</h1>
+      <div class="inputs">
+        <i class='bx bx-user'></i>
+        <input type="text" name="name" id="name" placeholder="Enter your Name" class="field" required>
+      </div>
+
+      <div class="inputs">
+        <i class='bx bx-envelope' ></i>
+        <input type="email" name="email" id="email" placeholder="Enter your Email ID" class="field" required>
+      </div>
+
+      <div class="inputs">
+        <i class='bx bx-calendar-heart'></i>
+        <input type="text" id="customDate" placeholder="Select the Appointment Date"class="field" required>
+      </div>
+
+      <div class="inputs">
+        <i class='bx bx-time-five'></i>
+        <input type="text" id="customTime" placeholder="Select Appointment Time" class="field" required>
+        </div>
+
+      <div class="inputs">
+        <input type="submit" value="Book An Appointment">
+      </div>
+    </form>
+
+    <script>
+
+      const minTime = "9:00 AM";
+      const maxTime = "5:00 PM";
+      flatpickr("#customDate", {
+          dateFormat: "d-m-Y", // Format of the selected date
+      });
+
+
+      flatpickr("#customTime", {
+            enableTime: true, 
+            noCalendar: true,
+            dateFormat: "H:i",
+            time_24hr: false,
+        });
+  </script>
+  </div>
+
+  </div>
+</body>
+</html>
