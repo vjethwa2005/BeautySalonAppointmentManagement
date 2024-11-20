@@ -21,9 +21,9 @@
     html{
       scroll-behavior: smooth;
     }
-    /* body{
+    body{
       overflow-x: hidden;
-    } */
+    }
     
     ::-webkit-scrollbar-track{
       background: #944440;
@@ -43,7 +43,7 @@
       right:0px;
       float:right;
       width: 200px;
-      height: 750px;
+      height:100%;
       background-color:#f4cbcb;
       margin:0px;
       padding:0px;
@@ -430,6 +430,24 @@
       text-align: center;
     }
 
+    .button{
+      position: relative;
+      top:15px;
+      background-color: #57150d;
+      border-radius: 25px;
+      padding: 10px;
+      margin:5px;
+      height: 50px;
+      color:#f4cbcb;
+      font-family: playfair display;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .button:hover{
+      background-color: #f4cbcb;
+      color:#57150d;
+    }
     form:hover{
       box-shadow:0 30px 30px 15px #310a08;
     }
@@ -767,7 +785,9 @@
         </div>
 
       <div class="inputs">
-        <input type="submit" value="Book An Appointment">
+        <a href="#book">
+        <input type="submit" value="Book An Appointment" class="button">
+        </a>
       </div>
     </form>
 
