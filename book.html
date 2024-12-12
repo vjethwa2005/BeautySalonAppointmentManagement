@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lotus Beauty Salon Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="icon" type="image/x-icon" href="./lotus_logo_petals-removebg-preview.png">
+  <link rel="stylesheet" href="./book.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  
+</head>
+<body bgcolor="#57160s">
+  
+<nav>
+  <ul>
+    <li><a href="./home.html">HOME</a></li>
+    <li><a href="http://127.0.0.1:5500/home.html#SERVICES">SERVICES</a></li>
+    <li><a href="http://127.0.0.1:5500/home.html#BOOKNOW">BOOK NOW</a></li>
+    <li><a href="http://127.0.0.1:5500/home.html#ABOUT%20US">ABOUT US</a></li>
+    <li><a href="http://127.0.0.1:5500/home.html#CONTACT%20US">CONTACT US</a></li>
+    <li><a href="http://127.0.0.1:5500/home.html#RESCHEDULE">RESCHEDULE</a></li>
+    <li><a href="http://127.0.0.1:5500/home.html#ACC">MY ACCOUNT</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <h1>Book your Self-care session with us!</h1>
+  <form action="./submit_form.php" method="post">
+    <div class="inputs">
+      <i class='bx bx-user'></i>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your Name" class="field" required>
+    </div>
+    <div class="inputs">
+      <i class='bx bx-envelope' ></i>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your Email ID" class="field" required>
+    </div>
+
+  <div class="multiselect" onclick="showCheckboxes()">
+    <div class="selectBox">
+      <select>
+        <option>Select Services</option>
+      </select>
+      <div class="overSelect"></div>
+    </div>
+
+    <!-- Custom checkboxes inside the multiselect -->
+    <div id="checkboxes">
+      <!-- Hair Services -->
+      <h3>Hair Services</h3>
+      <label for="hair-cut"><input type="checkbox" id="hair-cut" value="Hair Cut - $30"/>Hair Cut - $30</label>
+      <label for="hair-styling"><input type="checkbox" id="hair-styling" value="Hair Styling - $40"/>Hair Styling - $40</label>
+      <label for="hair-coloring"><input type="checkbox" id="hair-coloring" value="Hair Coloring - $50"/>Hair Coloring - $50</label>
+      <label for="keratin-treatment"><input type="checkbox" id="keratin-treatment" value="Keratin Treatment - $100"/>Keratin Treatment - $100</label>
+    
+      <!-- Manicure Services -->
+      <h3>Manicure Services</h3>
+      <label for="classic-manicure"><input type="checkbox" id="classic-manicure" value="Classic Manicure - $25"/>Classic Manicure - $25</label>
+      <label for="french-manicure"><input type="checkbox" id="french-manicure" value="French Manicure - $35"/>French Manicure - $35</label>
+      <label for="gel-manicure"><input type="checkbox" id="gel-manicure" value="Gel Manicure - $40"/>Gel Manicure - $40</label>
+      <label for="paraffin-manicure"><input type="checkbox" id="paraffin-manicure" value="Paraffin Manicure - $50"/>Paraffin Manicure - $50</label>
+    
+      <!-- Pedicure Services -->
+      <h3>Pedicure Services</h3>
+      <label for="classic-pedicure"><input type="checkbox" id="classic-pedicure" value="Classic Pedicure - $30"/>Classic Pedicure - $30</label>
+      <label for="spa-pedicure"><input type="checkbox" id="spa-pedicure" value="Spa Pedicure - $50"/>Spa Pedicure - $50</label>
+      <label for="gel-pedicure"><input type="checkbox" id="gel-pedicure" value="Gel Pedicure - $60"/>Gel Pedicure - $60</label>
+      <label for="paraffin-pedicure"><input type="checkbox" id="paraffin-pedicure" value="Paraffin Pedicure - $70"/>Paraffin Pedicure - $70</label>
+    
+      <!-- Makeup Services -->
+      <h3>Makeup Services</h3>
+      <label for="party-makeup"><input type="checkbox" id="party-makeup" value="Party Makeup - $80"/>Party Makeup - $80</label>
+      <label for="bridal-makeup"><input type="checkbox" id="bridal-makeup" value="Bridal Makeup - $200"/>Bridal Makeup - $200</label>
+      <label for="natural-makeup"><input type="checkbox" id="natural-makeup" value="Natural Makeup - $60"/>Natural Makeup - $60</label>
+      <label for="glam-makeup"><input type="checkbox" id="glam-makeup" value="Glam Makeup - $100"/>Glam Makeup - $100</label>
+    </div>
+    
+  </div>
+    <div class="inputs left">
+      <i class='bx bx-calendar-heart'></i>
+      <input type="text" id="customDate" placeholder="Select the Appointment Date"class="field" required>
+    </div>
+
+    <div class="inputs left">
+      <i class='bx bx-time-five'></i>
+      <input type="text" id="appointmentTime" placeholder="Select Appointment Time" class="field" required>
+      </div>
+
+    <div class="inputs">
+      <input type="submit" value="Book An Appointment" class="button">
+    </div>
+  </form>
+
+  <div class="qr">
+    <p>Scan to GPay</p>
+    <img src="./qr3.jpeg" height="250px" width="250px">
+  </div>
+</div>
+
+
+
+<script>
+var expanded = false;
+
+function showCheckboxes() {
+  var checkboxes = document.getElementById("checkboxes");
+  if (!expanded) {
+    checkboxes.style.display = "block";
+    expanded = true;
+  } else {
+    checkboxes.style.display = "none";
+    expanded = false;
+  }
+}
+
+// // Close the checkboxes when clicking outside
+// window.addEventListener('click', function(e) {
+//   const selectBox = document.querySelector('.selectBox');
+//   const checkboxes = document.getElementById('checkboxes');
+  
+//   if (!selectBox.contains(e.target)) {
+//     checkboxes.style.display = 'none';
+//     expanded = false;
+//   }
+// });
+  const minTime = "9:00 AM";
+  const maxTime = "5:00 PM";
+  flatpickr("#customDate", {
+      dateFormat: "d-m-Y", // Format of the selected date
+  });
+  
+  flatpickr("#appointmentTime", {
+        enableTime: true, 
+        noCalendar: true,
+        dateFormat: "H:i",
+        time_24hr: false,
+    });
+
+    const appointmentForm = document.getElementById('appointmentForm');
+
+appointmentForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const appointmentTimeInput = document.getElementById('appointmentTime');
+  const appointmentTime = appointmentTimeInput.value;
+
+  // Convert the datetime string to a Date object
+  const appointmentDateTime = new Date(appointmentTime);
+
+  // Calculate the delay in milliseconds
+  const delay = appointmentDateTime - Date.now();
+
+  // Schedule the notification (or any other action)
+  setTimeout(() => {
+    // Your appointment reminder code here, e.g., using the Notification API
+    if ('Notification' in window) {
+      Notification.requestPermission().then(function(permission) {
+        if (permission === "granted") {
+          new Notification('Appointment Reminder', {
+            body: 'Your appointment is now.'
+          });
+        }
+      });
+    }
+    // Other actions, like sending an email or SMS reminder
+  }, delay);
+
+  // Clear the form input field
+  appointmentTimeInput.value = '';
+});
+</script>
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,128 @@
+<html>
+  <head>
+   <title>customer-reviews</title>
+  
+  </head>
+<body>
+  <section class="customer-reviews">
+    <h2 class="review-heading">What Our Clients Say</h2>
+    <div class="reviews-container">
+      <div class="review-track">
+        <!-- Repeat these review cards 10 times -->
+        <div class="review-card">
+          <p class="review-text">"Lotus Beauty Salon offers an exceptional experience! The staff is incredibly professional, and I always leave feeling refreshed and beautiful."</p>
+          <h4 class="reviewer-name">— Sarah W.</h4>
+        </div>
+        <div class="review-card">
+          <p class="review-text">"Amazing service and attention to detail. The ambiance is relaxing, and the treatments are top-notch. Highly recommended!"</p>
+          <h4 class="reviewer-name">— Michael L.</h4>
+        </div>
+        <div class="review-card">
+          <p class="review-text">"Best salon in town! The staff is friendly, and they use high-quality products. My go-to place for all my beauty needs."</p>
+          <h4 class="reviewer-name">— Emma R.</h4>
+        </div>
+        <!-- Duplicate these 3 reviews to make 10 -->
+        <div class="review-card">
+          <p class="review-text">"Absolutely love their services! Every visit feels like a luxury experience."</p>
+          <h4 class="reviewer-name">— James P.</h4>
+        </div>
+        <div class="review-card">
+          <p class="review-text">"Great prices and excellent service. My hair has never looked better!"</p>
+          <h4 class="reviewer-name">— Linda T.</h4>
+        </div>
+        <div class="review-card">
+          <p class="review-text">"The best place for a quick beauty fix! Always a pleasure to visit."</p>
+          <h4 class="reviewer-name">— Kevin M.</h4>
+        </div>
+        <div class="review-card">
+          <p class="review-text">"Incredible staff and amazing results every time. Highly recommend!"</p>
+          <h4 class="reviewer-name">— Natasha S.</h4>
+        </div>
+        <div class="review-card">
+          <p class="review-text">"I feel so relaxed and rejuvenated after every appointment. Thank you!"</p>
+          <h4 class="reviewer-name">— Olivia H.</h4>
+        </div>
+        <div class="review-card">
+          <p class="review-text">"Professional and courteous staff. My skin has never felt this good!"</p>
+          <h4 class="reviewer-name">— Raj K.</h4>
+        </div>
+        <div class="review-card">
+          <p class="review-text">"Top-notch service and a relaxing atmosphere. Five stars!"</p>
+          <h4 class="reviewer-name">— Sophia B.</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<style>
+  /* Customer Review Section Styling */
+.customer-reviews {
+  height: 450px;
+  background: linear-gradient(135deg, #57160d, #944440);
+  color: #f4cbcb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;  /* Hide overflow for scrolling effect */
+  position: relative;
+}
+
+.review-heading {
+  font-size: 3em;
+  font-family: 'Abril Fatface', serif;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Container for horizontal scrolling */
+.reviews-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.review-track {
+  display: flex;
+  gap: 30px;
+  animation: scroll 25s linear infinite;  /* Horizontal scroll animation */
+}
+
+.review-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid #f4cbcb;
+  border-radius: 15px;
+  padding: 30px;
+  min-width: 300px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  flex: 0 0 auto; /* Prevents card from shrinking */
+}
+
+.review-text {
+  font-size: 1.4em;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.reviewer-name {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #f4cbcb;
+}
+
+/* Animation for scrolling */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%); /* Scroll entire track width */
+  }
+}
+
+</style>
+</body>
+</html>

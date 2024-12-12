@@ -1,0 +1,133 @@
+
+//aapointment date and time
+<div class="inputs">
+        <i class='bx bx-calendar-heart'></i>
+        <input type="text" id="customDate" placeholder="Select the Appointment Date"class="field" required>
+      </div>
+
+      <div class="inputs">
+        <i class='bx bx-time-five'></i>
+        <input type="text" id="customTime" placeholder="Select Appointment Time" class="field" required>
+        </div>
+
+      <div class="inputs">
+        <a href="#book">
+        <input type="submit" value="Book An Appointment" class="button">
+        </a>
+      </div>
+    </form>
+
+    <script>
+
+      const minTime = "9:00 AM";
+      const maxTime = "5:00 PM";
+      flatpickr("#customDate", {
+          dateFormat: "d-m-Y", // Format of the selected date
+      });
+
+
+      flatpickr("#customTime", {
+            enableTime: true, 
+            noCalendar: true,
+            dateFormat: "H:i",
+            time_24hr: false,
+        });
+  </script>
+
+
+
+//form
+.container{
+  position: relative;
+  top:50px;
+  width: 400px;
+  height: 500px;
+  background-color: #f4cbcb;
+  backdrop-filter: blur(100px);
+  display: flex;
+  /* justify-content: space-around; */
+}
+
+form{
+  position: relative;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  left:450px;
+  border-radius: 25px;
+  text-align: center;
+}
+
+.button{
+  position: relative;
+  top:15px;
+  background-color: #57150d;
+  border-radius: 25px;
+  padding: 10px;
+  margin:5px;
+  height: 50px;
+  color:#f4cbcb;
+  font-family: playfair display;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.button:hover{
+  background-color: #f4cbcb;
+  color:#57150d;
+}
+form:hover{
+  box-shadow:0 30px 30px 15px #310a08;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+input[type="time"] {
+        display: none;
+    }
+
+i{
+  position: relative;
+  /* background-color: #310a08; */
+  left:50px;
+  z-index: 1;
+}
+
+
+.inputs .field{
+  position: relative;
+  left:0px;
+  width:300px;
+  height: 50px;
+  border: none;
+  outline:none;
+  border-radius: 25px;
+  margin: 5px;
+  color:#310a08;
+  font-size: 15px;
+  text-align: center;
+  font-family: playfair display;
+  font-weight: bold;
+  /* box-shadow: 0 30px 30px 10px #310a08; */
+}
+
+.inputs .field::placeholder{
+  text-align: center;
+  padding:10px;
+  font-family: playfair display;
+  color:#944440;
+}
+
+.container h1{
+  position: relative;
+  text-align: center;
+  font-family: playfair display;
+  font-size: 25px;
+  top:0px;
+  

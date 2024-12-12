@@ -1,0 +1,269 @@
+
+    *{
+      cursor:url(./hand-pointer.png),auto;
+    }
+    html{
+      scroll-behavior: smooth;
+    }
+    body{
+      overflow-x: hidden;
+      overflow-y: scroll;
+      height: 1000px;
+    }
+    
+
+    nav{
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Vertically centers items */
+      align-items: center;     /* Horizontally centers items */
+      margin: 0 auto;
+      top:0px;
+      right:0px;
+      float:right;
+      width: 200px;
+      height:100%;
+      background-color:#f4cbcb;
+      margin:0px;
+      padding:0px;
+      position: fixed;
+      z-index: 1000;
+    }
+    
+    ul{
+      list-style:none;
+      margin:0px;
+      padding:0;
+      float: center;
+    }
+
+    li a{
+        
+      display:block;
+      color:#57150d;
+      text-align:center;
+      padding:14px 16px;
+      text-decoration: none;
+      font-family: playfair display;
+      font-weight: bold;
+      font-size: larger;
+      transition: 5ms;
+    }
+
+    li a:hover{
+
+      background-color: #944440;
+      color: #f4cbcb;
+      border-radius: 25px;
+    }
+ 
+
+
+body {
+  font-family: Playfair Display;
+  color: #f4cbcb;
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  position: absolute;
+  background-color: #f4cbcb;
+  height:90vh;
+  top:5vh;
+  left:350px;
+  width: 45%;
+  overflow: hidden;
+  border-radius:15px;
+  
+}
+
+.container .inputs .field{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  font-size: 15px;
+  text-align: center;
+  font-family: playfair display;
+  font-weight: bold;
+
+  position: relative;
+  width: 75%;
+  height: 30px;
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  left:50px;
+  top:50px;
+  z-index: 998;
+}
+
+.container .inputs.left{
+  top:50px;
+  width: 50%;
+  position: relative;
+}
+
+
+
+.container h1{
+  position: relative;
+  top: 50px;
+  left: 10%;
+  color:#310a08;
+}
+
+.container i{
+  position: relative;
+  top: 90px;
+  left: 15%;
+  z-index: 5;
+}
+
+.inputs .field::placeholder{
+  text-align: center;
+  padding:10px;
+  font-family: playfair display;
+  color:#944440;
+}
+
+.button{
+  position: absolute;
+  top:73vh;
+  left: 70px;
+  width: 35%;
+  height: 40px;
+  background-color: #57150d;
+  color: #f4cbcb;
+  border: none;
+  border-radius: 25px;
+  font-family: playfair display;
+}
+
+.button:hover{
+  background-color: #310a08;
+  color: #e3dcdc;
+}
+
+@media screen and (max-width: 768px) {
+  .form-row {
+      flex-direction: column;
+  }
+
+  .left-column, .right-column {
+      flex: none;
+      width: 100%;
+  }
+}
+
+multiselect {
+  width: 45%;
+}
+
+/* Select Box container */
+.selectBox {
+  z-index: 1000;
+  position: relative;
+  content: '▼';
+  top: 50px;
+  left: 10px;
+  font-size: 14px;
+  color: #310a08;
+}
+
+/* Default styling of the select box */
+.selectBox select {
+  z-index: 999;
+  width: 40%;
+  left:50px;
+  height: 45px;
+  position: absolute;
+  top:10px;
+  font-weight: bold;
+  padding: 10px;
+  background-color: #f4cbcb;
+  color: #310a08;
+  border-radius: 5px;
+  cursor: pointer;
+  border-radius:15px;
+  background-color: white;
+  outline:none;
+}
+
+
+
+/* Used to overlay the select box */
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+/* Hidden checkboxes initially */
+#checkboxes {
+  display: none;
+  border: 1px #dadada solid;
+  border-top: none;
+  background-color: #f4cbcb;
+  max-height: 500px;
+  overflow-y: scroll;
+  position: absolute;
+  width: 50%;
+  z-index: 1000;
+  margin:10px;
+}
+
+label{
+  margin:10px;
+}
+
+h3{
+  font-size: 14px;
+  color: #310a08;
+}
+/* Each option in the dropdown */
+#checkboxes label {
+  position: relative;
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+  color:#57150d;
+  left:100px;
+  border-radius: 15px;
+  background-color: white;
+  width:50%;
+}
+
+
+/* Hover effect on the options */
+#checkboxes label:hover {
+  background-color: #944440;
+  color: #f4cbcb;
+}
+
+/* Custom checkbox styling */
+#checkboxes input[type="checkbox"] {
+  margin: 0px 10px;
+}
+
+.container img{
+  border-radius: 15px;
+  position: relative;
+
+  left:55%;
+  top:-100px;
+}
+
+.qr p{
+  font-size: 14px;
+  color: #310a08;
+  position: relative;
+  left: 68%;
+  top: -100px;
+}

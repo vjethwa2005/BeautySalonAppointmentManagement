@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-signin-client_id" content="1018816285311-g4en7lhb86rejn4obrvl9ckerlsjsag5.apps.googleusercontent.com">
   <title>Lotus Beauty Salon Website</title>
+  <script src="./main.js" defer type="module"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
@@ -13,11 +15,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="icon" type="image/x-icon" href="./lotus_logo_petals-removebg-preview.png">
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "37P6A9cJ3Mr9aqW06",
+      });
+   })();
+</script>
   
 </head>
 <body bgcolor="#57160s">
   <style>
+    
+    *{
+      cursor:url(./hand-pointer.png),auto;
+    }
     html{
       scroll-behavior: smooth;
     }
@@ -50,15 +69,12 @@
       position: fixed;
       z-index: 1000;
     }
+    
     ul{
       list-style:none;
       margin:0px;
       padding:0;
       float: center;
-    }
-            
-    li{
-      color: white;
     }
 
     li a{
@@ -262,7 +278,7 @@
       text-shadow: 0px 10px 15px#310a08;
       animation: slide2 linear forwards;
       animation-timeline: view();
-      animation-range: entry 0;
+      animation-range: entry 3ms;
     }
 
     @keyframes slide2 {
@@ -326,6 +342,8 @@
       left:680px;
       transition: 0.5s;
     }
+
+    
 
     .circle3 img{
       position: relative;
@@ -404,87 +422,54 @@
       text-shadow: 0px 10px 15px#310a08;
       animation: slide2 linear forwards;
       animation-timeline: view();
-      animation-range: entry 0;
+      animation-range: entry 3ms;
     }
 
     .container{
-      position: relative;
-      top:50px;
-      width: 400px;
-      height: 500px;
+      position: absolute;
       background-color: #f4cbcb;
-      backdrop-filter: blur(100px);
-      display: flex;
-      /* justify-content: space-around; */
+      height: 70vh;
+      top:20vh;
+      left:450px;
+      width: 35%;
+      overflow: hidden;
+      border-radius:15px;
     }
 
-    form{
-      position: relative;
-      width: 35%;
+    .container .inputs .field{
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      left:450px;
-      border-radius: 25px;
+      flex-direction: column;
+    
+      font-size: 15px;
       text-align: center;
-    }
-
-    .button{
-      position: relative;
-      top:15px;
-      background-color: #57150d;
-      border-radius: 25px;
-      padding: 10px;
-      margin:5px;
-      height: 50px;
-      color:#f4cbcb;
       font-family: playfair display;
       font-weight: bold;
-      font-size: 15px;
-    }
 
-    .button:hover{
-      background-color: #f4cbcb;
-      color:#57150d;
-    }
-    form:hover{
-      box-shadow:0 30px 30px 15px #310a08;
-    }
-
-    input[type="date"]::-webkit-inner-spin-button,
-    input[type="date"]::-webkit-calendar-picker-indicator {
-      display: none;
-      -webkit-appearance: none;
-    }
-
-    input[type="time"] {
-            display: none;
-        }
-
-    i{
       position: relative;
-      /* background-color: #310a08; */
-      left:50px;
-      z-index: 1;
-    }
-
-
-    .inputs .field{
-      position: relative;
-      left:0px;
-      width:300px;
-      height: 50px;
-      border: none;
-      outline:none;
-      border-radius: 25px;
+      width: 75%;
+      height: 30px;
       margin: 5px;
-      color:#310a08;
-      font-size: 15px;
-      text-align: center;
-      font-family: playfair display;
-      font-weight: bold;
-      /* box-shadow: 0 30px 30px 10px #310a08; */
+      padding: 10px;
+      border: none;
+      border-radius: 25px;
+      outline: none;
+      left:10%;
+      top:50px;
+    }
+
+    .container h1{
+      position: relative;
+      top: 50px;
+      left: 10%;
+    }
+
+    .container i{
+      position: relative;
+      top: 90px;
+      left: 15%;
+      z-index: 5;
     }
 
     .inputs .field::placeholder{
@@ -494,39 +479,83 @@
       color:#944440;
     }
 
-    .container h1{
-      position: relative;
-      text-align: center;
-      font-family: playfair display;
-      font-size: 25px;
-      top:0px;
-      
-    }
-    .contactus{
+    .button{
       position: absolute;
-      top:2400px;
-      height: 800px;
-      width: 1300px;
-      /* background-color: black;  */
-    }
-
-    .contactus_text{
-      position: relative;
-      font-family: abril fatface;
-      font-size: 75px;
+      top:55vh;
+      left: 10%;
+      width: 35%;
+      height: 40px;
+      background-color: #944440;
       color: #f4cbcb;
-      top:30px;
-      left:0px;
-      text-shadow: 0px 10px 15px#310a08;
-      animation: slide2 linear forwards;
-      animation-timeline: view();
-      animation-range: entry 0;
+      border: none;
+      border-radius: 25px;
     }
 
+    .button:hover{
+      background-color: #310a08;
+      color: #e3dcdc;
+    }
+
+    #up{
+      position: absolute;
+      top:55vh;
+      left:55%;
+    }
+    .container span{
+      position: absolute;
+      top: 54vh;
+      left: 50%;
+      font-size: 15px;
+      color: #944440;
+      font-size: 40px;
+    }
+
+    #text1{
+      position: absolute;
+      top: 52vh;
+      left: 10%;
+      font-size: 12px;
+    }
+
+    .g-signin2{
+      position: absolute;
+      top: 55vh;
+      left: 14%;
+      border-radius: 15px;
+      padding: 0px;
+      font-family: playfair display;
+    }
+
+    .g-signin2 p{
+      position: relative;
+      top: 0px;
+      left: 0px;
+      font-size: 12px;
+      color: #944440;
+      z-index: 1000;
+    }
+
+    #text2{
+      position: absolute;
+      top: 52vh;
+      left:55%;
+      font-size: 12px;
+    }
+
+    .container img{
+      position: absolute;
+      top: 55vh;
+      left: 10%;
+      height: 10%;
+      width: 10%;
+      animation:rotate 5s ease-in-out 5ms infinite;
+    }
+
+    
     .about{
       position: absolute;
-      top:3200px;
-      height: 800px;
+      top:2400px;
+      height: 1600px;
       width: 1300px;
       /* background-color: white; */
     }
@@ -601,7 +630,7 @@
       }
     }
 
-    .about p{
+    #abouttext{
       position: relative;
       font-family: playfair display;
       color: #f4cbcb;
@@ -623,6 +652,7 @@
         left:500px;
       }
     }
+    
     .name{
       position: relative;
       font-family: abril fatface;
@@ -635,14 +665,234 @@
       font-weight:normal;
     }
 
+    .customer-reviews {
+      width: 100%;
+      top:700px;
+      left:0px;
+      height: 500px;
+      background: linear-gradient(90deg, #57160d, #944440,#57160d);
+      color: #f4cbcb;
+      align-content: center;
+      padding: 0px;
+      overflow: visible;  /* Hide overflow for scrolling effect */
+      position: absolute;
+    }
+
+    .review-heading {
+      font-size: 50px;
+      font-family: 'Abril Fatface', serif;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    /* Container for horizontal scrolling */
+    .reviews-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      left:0;
+    }
+
+    .review-track {
+      display: flex;
+      gap:15px;
+      animation: scroll 25s linear infinite;  /* Horizontal scroll animation */
+      left:0;
+    }
+
+    .review-card {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 2px solid #f4cbcb;
+      border-radius: 15px;
+      padding: 30px;
+      width: 300px;
+      height:200px;
+      transition: transform 0.3s ease;
+      flex: 0 0 auto; /* Prevents card from shrinking */
+      box-shadow: 20px 30px 30px -20px rgba(0,0,0) inset;
+    }
+
+    .review-text{
+      font-size:20px;
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+    }
+
+    .reviewer-name {
+      font-size: 25px;
+      font-weight: bold;
+      color: #f4cbcb;
+    }
+
+    /* Animation for scrolling */
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%); /* Scroll entire track width */
+      }
+    }
+
+    .contactus{
+      position: absolute;
+      top:3800px;
+      height: 800px;
+      width: 1300px;
+      /* background-color: black;  */
+    }
+
+    .contactus_text{
+      position: relative;
+      font-family: abril fatface;
+      font-size: 75px;
+      color: #f4cbcb;
+      top:30px;
+      left:0px;
+      text-shadow: 0px 10px 15px#310a08;
+      animation: slide2 linear forwards;
+      animation-timeline: view();
+      animation-range: entry 3ms;
+    }
+
+
+    .footer{
+      width: 90%;
+      height: 200px;
+      background-color: #944440;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      top:4800px;
+    }
+
+    footer {
+            background-color: #944440;
+            color: #f4cbcb;
+            text-align: center;
+            padding: 20px 0;
+            font-family: playfair display;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: flex-start;
+        }
+
+        .footer-column {
+            width: 25%;
+            padding: 10px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: #ecf0f1;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0px;
+        }
+
+        .footer-column ul li a {
+            color: #f4cbcb;
+            text-decoration: none;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin: 0px 60px;
+            color: #f4cbcb;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #e74c3c;
+        }
+
+        .copyright {
+            margin-top: 60px;
+            font-size: 14px;
+            color: #bdc3c7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .footer-column {
+                width: 90%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-column {
+                width: 100%;
+            }
+        }
+
+      .form{
+        position: relative;
+        height: 50vh;
+        width: 50vh;
+        background-color: #f4cbcb;
+        padding: 10px;
+        border-radius: 15px;
+        box-shadow: 0px 0px 10px rgba(0,0,0);
+        top:100px;
+        left:450px;
+
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .form input{
+        padding:0px;
+        background-color: white;
+        font-family: playfair display;
+        height:30px;
+        outline: none;
+        border-radius: 15px;
+        border: none;
+        width:44vh;
+        text-align: center;
+      }
+
+      .form input::placeholder{
+        text-align: center;
+        font-family: playfair display;
+        font-size: 15px;
+        color:#310a08;
+        font-weight: bold;
+
+      }
+
+      .form i{
+        position: relative;
+        top:40px;
+        left:-150px;
+      }
+
+      #Send{
+
+      }
   </style>
   <nav>
     <ul>
       <li><a href="#HOME">HOME</a></li>
       <li><a href="#SERVICES">SERVICES</a></li>
       <li><a href="#BOOKNOW">BOOK NOW</a></li>
-      <li><a href="#CONTACT US">CONTACT US</a></li>
       <li><a href="#ABOUT US">ABOUT US</a></li>
+      <li><a href="#CONTACT US">CONTACT US</a></li>
       <li><a href="#RESCHEDULE">RESCHEDULE</a></li>
       <li><a href="#ACC">MY ACCOUNT</a></li>
     </ul>
@@ -735,7 +985,7 @@
 
     <div class="abt_circle">
       <div class="actual_circle">
-        <img src="./about.jpeg">
+        <img src="./client.png">
       </div>
 
       <div class="about_star">
@@ -743,7 +993,7 @@
       </div>
     </div>
 
-    <p>At Lotus beauty salon, we specialize
+    <p id="abouttext">At Lotus beauty salon, we specialize
       in bringing out your natural beauty.
       With over 8 years of experience, our expert provides personalized services,
       from stylish haircuts and vibrant colors to rejuvenating facials and flawless makeup.
@@ -751,63 +1001,167 @@
       luxurious experience every time.</p>
 
     <div class="name">VAISHALI R. SHIMPI</div>
+    <section class="customer-reviews">
+      <h2 class="review-heading">What Our Clients Say</h2>
+      <div class="reviews-container">
+        <div class="review-track">
+          <!-- Repeat these review cards 10 times -->
+          <div class="review-card">
+            <p class="review-text">"Lotus Beauty Salon offers an exceptional experience! The staff is incredibly professional, and I always leave feeling refreshed and beautiful."</p>
+            <h4 class="reviewer-name">— Aastha Patel</h4>
+          </div>
+          <div class="review-card">
+            <p class="review-text">"Amazing service and attention to detail. The ambiance is relaxing, and the treatments are top-notch. Highly recommended!"</p>
+            <h4 class="reviewer-name">— Charmi Gohil</h4>
+          </div>
+          <div class="review-card">
+            <p class="review-text">"Best salon in town! The staff is friendly, and they use high-quality products. My go-to place for all my beauty needs."</p>
+            <h4 class="reviewer-name">— Nikki Chaudhari</h4>
+          </div>
+          <!-- Duplicate these 3 reviews to make 10 -->
+          <div class="review-card">
+            <p class="review-text">"Absolutely love their services! Every visit feels like a luxury experience."</p>
+            <h4 class="reviewer-name">— Dimple Shah</h4>
+          </div>
+          <div class="review-card">
+            <p class="review-text">"Great prices and excellent service. My hair has never looked better!"</p>
+            <h4 class="reviewer-name">— Lalita Gamit</h4>
+          </div>
+          <div class="review-card">
+            <p class="review-text">"The best place for a quick beauty fix! Always a pleasure to visit."</p>
+            <h4 class="reviewer-name">— Rajni Jethwa</h4>
+          </div>
+          <div class="review-card">
+            <p class="review-text">"Incredible staff and amazing results every time. Highly recommend!"</p>
+            <h4 class="reviewer-name">— Nila</h4>
+          </div>
+          <div class="review-card">
+            <p class="review-text">"I feel so relaxed and rejuvenated after every appointment. Thank you!"</p>
+            <h4 class="reviewer-name">— Smita George</h4>
+          </div>
+          <div class="review-card">
+            <p class="review-text">"Professional and courteous staff. My skin has never felt this good!"</p>
+            <h4 class="reviewer-name">— Kalpana Rao</h4>
+          </div>
+          <div class="review-card">
+            <p class="review-text">"Top-notch service and a relaxing atmosphere. Five stars!"</p>
+            <h4 class="reviewer-name">— Isha Rana</h4>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
+  
 
   <div class="contactus" id="CONTACT US">
     <div class="contactus_text">
       CONTACT US
     </div>
+
+    <form class="form">
+      <h2>CONTACT US</h2>
+      <i class='bx bx-user' ></i>
+      <p type="Name:"><input placeholder="Write your name here.."></input></p>
+      <i class='bx bx-envelope'></i>
+      <p type="Email:"><input placeholder="Let us know how to contact you back.."></input></p>
+      <i class='bx bx-message-square' ></i>
+      <p type="Message:"><input placeholder="What would you like to tell us.."></input></p>
+      <button id="Send">Send Message</button>
+      <div>
+        <span class="fa fa-phone"></span>+91 98985 71505
+        <span class="fa fa-envelope-o"></span> vaishalishimpi69@gmail.com
+      </div>
+      </form>
   </div>
 
 
   <div class="booknow" id="BOOKNOW">
     <div class="booknow_text">BOOK US NOW</div>
-    <form action="" method="post" class="container">
-      <h1>Ready to Pamper yourself?</h1>
-      <div class="inputs">
-        <i class='bx bx-user'></i>
-        <input type="text" name="name" id="name" placeholder="Enter your Name" class="field" required>
-      </div>
+      <div class="container">
+        <div class="sign-in">
+          <form method="post" action="">
+            <h1>Ready to Pamper yourself?</h1>
+            <div class="inputs">
+              <i class='bx bx-user'></i>
+              <input type="text" name="name" id="name" placeholder="Enter your Name" class="field" required>
+            </div>
 
-      <div class="inputs">
-        <i class='bx bx-envelope' ></i>
-        <input type="email" name="email" id="email" placeholder="Enter your Email ID" class="field" required>
-      </div>
+            <div class="inputs">
+              <i class='bx bx-envelope' ></i>
+              <input type="email" name="email" id="email" placeholder="Enter your Email ID" class="field" required>
+            </div>
 
-      <div class="inputs">
-        <i class='bx bx-calendar-heart'></i>
-        <input type="text" id="customDate" placeholder="Select the Appointment Date"class="field" required>
-      </div>
+            <div class="inputs">
+              <i class='bx bx-low-vision'></i>
+              <input type="password" name="password" id="password" placeholder="Enter your Password" class="field" required>
+            </div>
 
-      <div class="inputs">
-        <i class='bx bx-time-five'></i>
-        <input type="text" id="customTime" placeholder="Select Appointment Time" class="field" required>
+            <span class="text" id="text1">Already have an account?</span>
+            <div class="inputs">
+              
+              <!-- <input type="submit" value="Sign in" class="button" id="in"> -->
+              <div class="g-signin2" data-onsuccess="onSignIn">
+                <p>Sign in with Google</p>
+              </div>
+            </div>
+            <img src="./LOTUS_dark_mode__6_-removebg-preview.png">
+
+            <span>|</span>
+
+            <span class="text" id="text2">Or Create an account</span>
+            <input type="submit" value="Sign Up" class="button" id="up">
+          </form>
+        </div>
+      </div>
+    </div>
+  
+
+  <div class="footer" id="FOOTER">
+    <div class="footer-content">
+      <footer>
+        <div class="footer-container">
+            
+            <!-- Column 1: About Us -->
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>We provide premium beauty and wellness services to help you look and feel your best. Book your appointment today!</p>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>Email: vaishalishimpi69@gmail.com</li>
+                    <li>Phone: +91 98985 71505</li>
+                    <li>Address: 35-A Flower Valley, Near M.B. Park, Vyara, 394650</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/vaishali.shimpi.7777?mibextid=ZbWKwL" target="_blank">
+                      <i class='bx bxl-facebook' ></i>
+                      Facebook
+                    </a>
+                    <a href="https://www.instagram.com/vaishali_shimpi28/" target="_blank">
+                      <i class='bx bxl-instagram'></i>
+                      Instagram
+                    </a>
+                    <a href="https://twitter.com" target="_blank">
+                      <i class='bx bxl-twitter' ></i>
+                      Twitter
+                    </a>
+                </div>
+            </div>
+            
         </div>
 
-      <div class="inputs">
-        <a href="#book">
-        <input type="submit" value="Book An Appointment" class="button">
-        </a>
-      </div>
-    </form>
-
-    <script>
-
-      const minTime = "9:00 AM";
-      const maxTime = "5:00 PM";
-      flatpickr("#customDate", {
-          dateFormat: "d-m-Y", // Format of the selected date
-      });
-
-
-      flatpickr("#customTime", {
-            enableTime: true, 
-            noCalendar: true,
-            dateFormat: "H:i",
-            time_24hr: false,
-        });
-  </script>
+        <!-- Copyright Section -->
+        <div class="copyright">
+            &copy; 2024 Lotus Beauty Parlour. All Rights Reserved.
+        </div>
+    </footer>
+    </div>
   </div>
+  
 
   </div>
 </body>
