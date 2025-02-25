@@ -1,4 +1,4 @@
-<h1> LOTUS BEAUTY SALON WEBSITE</h1>
+<h1> LOTUS BEAUTY SALON WEBSITE</h1> (Under development)
 A project related to managing appointments and handling user using database 
 
 
