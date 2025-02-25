@@ -1,5 +1,5 @@
-<h1> LOTUS BEAUTY SALON WEBSITE</h1> (Under development)
-A project related to managing appointments and handling user using database 
+<h1> LOTUS BEAUTY SALON WEBSITE</h1> 
+A project related to managing appointments and handling user using database (Under development)
 
 
 ![image](https://github.com/user-attachments/assets/bbdd67ae-b880-437e-bd79-a2187e8c7e05)
